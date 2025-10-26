@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Library System</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="nav-logo">Library System - Admin</h2>
+            <ul class="nav-menu">
+                <li><a href="#" id="logoutBtn" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <header>
+            <h1>Admin Dashboard</h1>
+            <p>Manage books and track borrowings</p>
+        </header>
+        
+        <main class="admin-dashboard">
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="books">Manage Books</button>
+                <button class="tab-btn" data-tab="borrowings">View Borrowings</button>
+            </div>
+            
+            <!-- Books Management Tab -->
+            <div id="books-tab" class="tab-content active">
+                <div class="section-header">
+                    <h2>Book Management</h2>
+                    <button id="addBookBtn" class="btn btn-primary">Add New Book</button>
+                </div>
+                
+                <div id="booksList" class="admin-books-list">
+                    <!-- Books will be loaded here -->
+                </div>
+            </div>
+            
+            <!-- Borrowings Tab -->
+            <div id="borrowings-tab" class="tab-content">
+                <div class="section-header">
+                    <h2>Borrowing Records</h2>
+                </div>
+                
+                <div id="borrowingsList" class="borrowings-list">
+                    <!-- Borrowings will be loaded here -->
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Add/Edit Book Modal -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Add New Book</h2>
+            <form id="bookForm">
+                <input type="hidden" id="bookId">
+                <div class="form-group">
+                    <label for="title">Book Title</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author" required>
+                </div>
+                <div class="form-group">
+                    <label for="image_url">Image URL</label>
+                    <input type="text" id="image_url" name="image_url" placeholder="https://source.unsplash.com/random/300x400/?books,library">
+                </div>
+                <button type="submit" class="btn btn-primary">Save Book</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/supabase.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>

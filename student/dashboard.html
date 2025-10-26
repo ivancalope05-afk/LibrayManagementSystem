@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Library System</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="nav-logo">Library System</h2>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+                <li><a href="books.html" class="nav-link">Books</a></li>
+                <li><a href="#" id="logoutBtn" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <header>
+            <h1>Student Dashboard</h1>
+            <p>Welcome back, <span id="studentName">Student</span>!</p>
+        </header>
+        
+        <main class="dashboard">
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Books Borrowed</h3>
+                    <p id="borrowedCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Available Books</h3>
+                    <p id="availableCount">0</p>
+                </div>
+            </div>
+            
+            <div class="recent-activity">
+                <h2>Recent Activity</h2>
+                <div id="recentBorrowings" class="activity-list">
+                    <!-- Recent borrowings will be loaded here -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/supabase.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/student.js"></script>
+</body>
+</html>

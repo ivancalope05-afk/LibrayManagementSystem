@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - Library System</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="nav-logo">Library System</h2>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="books.html" class="nav-link active">Books</a></li>
+                <li><a href="#" id="logoutBtn" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <header>
+            <h1>Library Books</h1>
+            <p>Browse and borrow from our collection</p>
+        </header>
+        
+        <main class="books-page">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search books by title or author...">
+                <button id="searchBtn" class="btn btn-primary">Search</button>
+            </div>
+            
+            <div id="booksGrid" class="books-grid">
+                <!-- Books will be loaded here -->
+            </div>
+        </main>
+    </div>
+    
+    <!-- Borrow Modal -->
+    <div id="borrowModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Borrow Book</h2>
+            <div id="bookDetails"></div>
+            <form id="borrowForm">
+                <div class="form-group">
+                    <label for="pickupDate">Pickup Date</label>
+                    <input type="date" id="pickupDate" name="pickupDate" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Confirm Borrow</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Receipt Modal -->
+    <div id="receiptModal" class="modal">
+        <div class="modal-content receipt">
+            <h2>📚 Borrow Receipt</h2>
+            <div class="receipt-content">
+                <div class="receipt-line"></div>
+                <div id="receiptDetails"></div>
+                <div class="receipt-line"></div>
+                <p class="receipt-note">Show this receipt when getting your book.</p>
+                <button id="printReceipt" class="btn btn-primary">Print Receipt</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/supabase.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/student.js"></script>
+</body>
+</html>
